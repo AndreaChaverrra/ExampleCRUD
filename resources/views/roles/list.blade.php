@@ -4,7 +4,7 @@
 <section class="container">
      <div class="row">
           <article class="col-md-12">
-           <form action="{{route('movie/show')}}" method="post" novalidate class="form-inline">
+           <form action="{{route('rol/show')}}" method="post" novalidate class="form-inline">
            @csrf
               <div class="form-group">
                   <label style="margin: 5px">Nombre</label>
@@ -13,9 +13,9 @@
 
               <div class="form-group">
                   <button style="margin: 5px" type="submit" class="btn btn-default">Buscar</button>
-                  <a  href="{{route('movie.index')}}" class="btn btn-primary">Todas</a>
+                  <a  href="{{route('rol.index')}}" class="btn btn-primary">Todas</a>
 
-                  <a style="margin: 10px" href="{{route('movie.create')}}" class="btn btn-primary">Crear</a>
+                  <a style="margin: 10px" href="{{route('rol.create')}}" class="btn btn-primary">Crear</a>
               </div>
               </form>
             </article>
@@ -33,15 +33,15 @@
                 </tr>
              </thead>
              <tbody>
-                @foreach($movies as $movie)
+                @foreach($roles as $rol)
                  <tr>
-                    <td>{{$movie->name}}</td>
-                    <td>{{$movie->description}}</td>
-                    <td>{{$movie->user_id}}</td>
-                    <td>{{$movie->status_id}}</td>
+                    <td>{{$rol->name}}</td>
+                    <td>{{$rol->description}}</td>
+                    <td>{{$rol->user_id}}</td>
+                    <td>{{$rol->status_id}}</td>
                     <td>
-                        <a class="btn btn-primary btn-xs" href="{{route('movie.edit',['id' => $movie->id]) }}">Editar</a>
-                        <a class="btn btn-danger btn-xs" href="{{route('movie.destroy',['id' => $movie->id]) }}">Eliminar</a>
+                        <a class="btn btn-primary btn-xs" href="{{route('rol.edit',['id' => $rol->id]) }}">Editar</a>
+                        <a class="btn btn-danger btn-xs" href="{{route('rol.destroy',['id' => $rol->id]) }}">Eliminar</a>
                     </td>
                  </tr>
                  @endforeach
